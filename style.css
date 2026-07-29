@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  max-width: 1090px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 21px;
+  padding-bottom: 56px;
+  display: flex;
+  align-items: center;
+}
+.header_box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.header_box--content {
+  display: flex;
+  max-width: 185px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.header_box--content--background {
+  max-width: 40px;
+  width: 100%;
+  background: #7A7A7A;
+  border-radius: 11px;
+}
+.header_box--content--text {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  color: #000000;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
+}
+.header_box--container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  max-width: 544px;
+}
+.header_box--container--nav {
+  display: flex;
+  max-width: 370px;
+  width: 100%;
+  justify-content: space-between;
+}
+.header_box--container--nav--content {
+  max-width: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header_box--container--nav--link {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  color: #000000;
+  text-decoration: none;
+  line-height: 100%;
+  letter-spacing: 0%;
+}/*# sourceMappingURL=style.css.map */
