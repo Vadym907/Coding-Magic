@@ -5,6 +5,98 @@
   box-sizing: border-box;
 }
 
+.modal {
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 300ms ease;
+}
+.modal_box {
+  max-width: 576px;
+  width: 100%;
+  position: relative;
+  position: absolute;
+  top: 30%;
+  height: 316px;
+  right: 37%;
+  background-color: white;
+  z-index: 10;
+  border-radius: 20px;
+}
+.modal_box--content {
+  padding-top: 46px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.modal_box--content--text {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  text-align: center;
+  font-size: 12px;
+  max-width: 392px;
+  line-height: 100%;
+  height: 60px;
+  letter-spacing: 0%;
+}
+.modal_box--content--form {
+  display: flex;
+  padding-top: 42px;
+  flex-direction: column;
+  padding-bottom: 47px;
+  align-items: center;
+}
+.modal_box--content--form--label {
+  font-family: Inter;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  padding-bottom: 18px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.modal_box--content--form--input {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  color: #7E7E7E;
+  background: #D7D7D7;
+  border-radius: 20px;
+  padding-top: 10px;
+  outline: none;
+  padding-right: 8px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border: none;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.modal_box--content--form--btn {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  color: #fff;
+  padding: 10px 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+  background: #000000;
+  border-radius: 20px;
+  margin-top: 18px;
+}
+.modal_box--close {
+  position: absolute;
+  right: 0%;
+  padding-right: 30px;
+  padding-top: 30px;
+}
+
 .header {
   max-width: 1090px;
   width: 100%;
@@ -12,7 +104,71 @@
   padding-top: 21px;
   padding-bottom: 56px;
   display: flex;
+  position: relative;
   align-items: center;
+}
+.header_filter {
+  border: 1px solid #000000;
+  border-top: 0px;
+  border-style: solid;
+  max-width: 160px;
+  width: 100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-15px);
+  transition: 300ms ease;
+  right: 72%;
+  opacity: 0%;
+}
+.header_filter--hide {
+  border: 1px solid #000000;
+  border-top: 0px;
+  transform: translateY(0px);
+  transform: scaleY(1);
+  transition: 300ms ease;
+  border-style: solid;
+  max-width: 160px;
+  width: 100%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  top: 50%;
+  right: 72%;
+  opacity: 100%;
+}
+.header_filter--card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header_filter--card:hover {
+  background: #F1F1F1;
+  transition: 300ms ease;
+}
+.header_filter--card--bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header_filter--card--bottom:hover {
+  background: #F1F1F1;
+  transition: 300ms ease;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.header_filter--card--text {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .header_box {
   display: flex;
@@ -31,7 +187,23 @@
   max-width: 40px;
   width: 100%;
   background: #7A7A7A;
+  height: 20px;
+  cursor: pointer;
   border-radius: 11px;
+  display: flex;
+}
+.header_box--content--background--sun {
+  transition: 300ms ease margin-left;
+  width: 20px;
+  height: 20px;
+  background-image: url(./imgs/sun.png);
+}
+.header_box--content--background--moon {
+  margin-left: 20px;
+  transition: 300ms ease margin-left;
+  width: 20px;
+  height: 20px;
+  background-image: url(./imgs/moon.png);
 }
 .header_box--content--text {
   font-family: Montserrat Alternates;
@@ -62,6 +234,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header_box--container--nav--content--img {
+  cursor: pointer;
 }
 .header_box--container--nav--link {
   font-family: Montserrat Alternates;

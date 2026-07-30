@@ -9,6 +9,22 @@
 </head>
 
 <body>
+    <div id="start-modal" class="modal">
+        <div class="modal_box">
+            <img id="close" class="modal_box--close" src="./imgs/close.png" alt="">
+            <div class="modal_box--content">
+                <p class="modal_box--content--text">Привіт! <br>
+                    Ви потрапили на сайт інтерактивних ігор та завдань <br>
+                    Надіємось, що вам сподобається і ви отримаєте позитивні емоції! 
+                    Бажаємо Вам гарно провести час!</p>
+                <form id="start-modal-submit"  class="modal_box--content--form" action="">
+                    <label class="modal_box--content--form--label" for="input-name">Введіть своє ім’я:</label>
+                    <input required class="modal_box--content--form--input" id="input-name" placeholder="Ваше ім’я..." type="name">
+                    <button type="submit" class="modal_box--content--form--btn">Зберегти</button>
+                </form>
+            </div>
+        </div>
+    </div>
     <header class="header">
         <div class="header_box">
             <div class="header_box--container">
@@ -16,20 +32,33 @@
                 <nav class="header_box--container--nav">
                     <div class="header_box--container--nav--content">
                         <a href="" class="header_box--container--nav--link">Інтерактив</a>
-                        <img src="./imgs/Vector 4.png" alt="">
+                        <img class="header_box--container--nav--content--img" id="filter-open" src="./imgs/Vector 4.png"
+                            alt="">
                     </div>
                     <a href="" class="header_box--container--nav--link">Наша команда</a>
                     <a href="" class="header_box--container--nav--link">Контакти</a>
                 </nav>
             </div>
             <div class="header_box--content">
-                <div class="header_box--content--background">
-                    
+                <div id="header-bg" class="header_box--content--background">
+                    <div class="header_box--content--background--sun"></div>
                 </div>
-                <p class="header_box--content--text">Вітаємо, User!</p>
+                <p id="userName" class="header_box--content--text">Вітаємо, User!</p>
+            </div>
+        </div>
+        <div class="header_filter" id="filter">
+            <div class="header_filter--card">
+                <p class="header_filter--card--text">Числовий</p>
+            </div>
+            <div class="header_filter--card">
+                <p class="header_filter--card--text">Ігровий</p>
+            </div>
+            <div class="header_filter--card--bottom">
+                <p class="header_filter--card--text">Ознайомчий</p>
             </div>
         </div>
     </header>
+    <script src="./script.js"></script>
 </body>
 
 </html>
