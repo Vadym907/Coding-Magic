@@ -11,18 +11,23 @@
 <body>
     <div id="start-modal" class="modal">
         <div class="modal_box">
+            <img class="modal_box--sword" src="./imgs/sword.png" alt="">
+            <img class="modal_box--puzzle" src="./imgs/puzzle.png" alt="">
             <img id="close" class="modal_box--close" src="./imgs/close.png" alt="">
             <div class="modal_box--content">
-                <p class="modal_box--content--text">Привіт! <br>
-                    Ви потрапили на сайт інтерактивних ігор та завдань <br>
-                    Надіємось, що вам сподобається і ви отримаєте позитивні емоції! 
+                <p class="modal_box--content--text">Привіт!
+                    Ви потрапили на сайт інтерактивних ігор та завдань
+                    Надіємось, що вам сподобається і ви отримаєте позитивні емоції!
                     Бажаємо Вам гарно провести час!</p>
-                <form id="start-modal-submit"  class="modal_box--content--form" action="">
+                <form id="start-modal-submit" class="modal_box--content--form" action="">
                     <label class="modal_box--content--form--label" for="input-name">Введіть своє ім’я:</label>
-                    <input required class="modal_box--content--form--input" id="input-name" placeholder="Ваше ім’я..." type="name">
+                    <input required class="modal_box--content--form--input" id="input-name" placeholder="Ваше ім’я..."
+                        type="name">
                     <button type="submit" class="modal_box--content--form--btn">Зберегти</button>
                 </form>
             </div>
+            <img class="modal_box--toe" src="./imgs/tic-tac-toe.png" alt="">
+            <img class="modal_box--game" src="./imgs/game-development.png" alt="">
         </div>
     </div>
     <header class="header">
@@ -58,6 +63,28 @@
             </div>
         </div>
     </header>
+
+    <main>
+        <section class="year">
+            <h1 class="year_title">Популярні інетрактивні ігри</h1>
+            <div class="year_line"></div>
+            <div class="year_content">
+                <h3 class="year_content--title">Перевір в який рік ти народився</h3>
+                <div class="year_content--box">
+                    <form id="year" class="year_content--box--form" action="">
+                        <input id="year-input" class="year_content--box--form--input"
+                            placeholder="Введіть рік народження" type="number">
+                        <button type="submit" class="year_content--box--form--btn">
+                            <img src="./imgs/search.png" alt="">
+                        </button>
+                    </form>
+                    <p id="year-answer" class="year_content--box--text"></p>
+                </div>
+            </div>
+            <div class="year_line"></div>
+
+        </section>
+    </main>
     <script src="./script.js"></script>
 </body>
 
