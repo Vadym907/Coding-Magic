@@ -55,12 +55,11 @@
   font-family: Inter;
   font-weight: 400;
   font-style: Regular;
-  text-align: center;
   font-size: 12px;
-  max-width: 392px;
+  width: 392px;
   line-height: 100%;
-  width: 100%;
   letter-spacing: 0%;
+  text-align: center;
 }
 .modal_box--content--form {
   display: flex;
@@ -215,6 +214,7 @@
 .header_box--content--background--sun {
   transition: 300ms ease margin-left;
   width: 20px;
+  border-radius: 20px;
   height: 20px;
   background-image: url(./imgs/sun.png);
 }
@@ -222,6 +222,7 @@
   margin-left: 20px;
   transition: 300ms ease margin-left;
   width: 20px;
+  border-radius: 20px;
   height: 20px;
   background-image: url(./imgs/moon.png);
 }
@@ -230,7 +231,6 @@
   font-weight: 400;
   font-style: Regular;
   font-size: 12px;
-  color: #000000;
   line-height: 100%;
   letter-spacing: 0%;
   text-align: right;
@@ -262,8 +262,8 @@
   font-family: Montserrat Alternates;
   font-weight: 400;
   font-style: Regular;
-  font-size: 12px;
   color: #000000;
+  font-size: 12px;
   text-decoration: none;
   line-height: 100%;
   letter-spacing: 0%;
@@ -283,6 +283,76 @@ main {
   background-color: white;
   flex-direction: column;
   align-items: center;
+}
+.year_guess {
+  display: flex;
+  padding-top: 36px;
+  width: 100%;
+  max-width: 576px;
+  flex-direction: column;
+  padding-bottom: 36px;
+  align-items: center;
+}
+.year_guess--title {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  padding-bottom: 36px;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.year_guess--content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.year_guess--content--form {
+  display: flex;
+  max-width: 158px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background: #D7D7D7;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 20px;
+  height: 35px;
+}
+.year_guess--content--form--btn {
+  background: #000000;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 35px;
+  height: 35px;
+  z-index: 2;
+}
+.year_guess--content--form--input {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  background: #D7D7D7;
+  margin-top: 10px;
+  margin-left: 10px;
+  outline: none;
+  margin-bottom: 10px;
+  color: #7E7E7E;
+  max-width: 112px;
+  width: 100%;
+  border: none;
+  line-height: 100%;
+  letter-spacing: 0%;
+  z-index: 1;
+}
+.year_guess--content--text {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: right;
 }
 .year_title {
   font-family: Montserrat Alternates;

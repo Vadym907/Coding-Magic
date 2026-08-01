@@ -1,13 +1,52 @@
 ////////////// Бекграунд сайту ////////////
 
+const logo = document.querySelector("#logo")
+
+const allContent = document.querySelectorAll("section,div")
+
+const alltext = document.querySelectorAll("p, h1,h2,h3,h4, a, li")
+
 const pageBg = document.querySelector("#header-bg")
 
 const imgSun = document.querySelector(".header_box--content--background--sun")
+
+const imgSunBox = document.querySelector("#header-bg-div")
+
+const line = document.querySelectorAll(".year_line")
 
 pageBg.addEventListener("click", () => {
 
     imgSun.classList.toggle("header_box--content--background--sun")
     imgSun.classList.toggle("header_box--content--background--moon")
+
+    if (imgSun.classList.contains("header_box--content--background--moon")) {
+        document.body.style.backgroundColor = "black"
+        allContent.forEach(item => {
+            item.style.backgroundColor = "black"
+        })
+        alltext.forEach(item => {
+            item.style.color = "white"
+        })
+        logo.src = "./imgs/coding-magic–white.svg"
+        pageBg.style.backgroundColor = "#7A7A7A"
+        line.forEach(item => {
+            item.style.border = "1px solid #fff"
+        })
+    } else {
+        document.body.style.backgroundColor = "white"
+        document.body.style.transition = "300ms ease backgroundColor"
+        alltext.forEach(item => {
+            item.style.color = "black"
+        })
+        allContent.forEach(item => {
+            item.style.backgroundColor = "white"
+        })
+        logo.src = "./imgs/coding-magic.svg"
+        pageBg.style.backgroundColor = "#7A7A7A"
+        line.forEach(item => {
+            item.style.border = "1px solid #000"
+        })
+    }
 })
 
 ///////////////////// Фильтер /////////////////////
@@ -131,5 +170,30 @@ year.addEventListener("submit", event => {
     } else {
         yearAnswer.style.color = "#990000"
         yearAnswer.textContent = "Ви народилися не у високосний рік!"
+    }
+})
+
+////////////////// guess //////////////
+
+
+const guess = document.querySelector("#guess")
+
+const guessInput = document.querySelector("#guess-input")
+
+const guessAnswer = document.querySelector("#guess-answer")
+
+
+guess.addEventListener("submit", event => {
+    event.preventDefault()
+
+    let random = Math.random() * 10
+    random = Math.floor(random) + 1
+
+    if (guessInput.value == random) {
+        guessAnswer.style.color = "#039900"
+        guessAnswer.textContent = `Вітаю, ви вгадали число! ${random} `
+    } else {
+        guessAnswer.style.color = "#990000"
+        guessAnswer.textContent = `Ви програли, комп’ютер загадав ${random} `
     }
 })
