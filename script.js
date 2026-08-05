@@ -12,7 +12,7 @@ const imgSun = document.querySelector(".header_box--content--background--sun")
 
 const imgSunBox = document.querySelector("#header-bg-div")
 
-const line = document.querySelectorAll(".year_line")
+const line = document.querySelectorAll(".line")
 
 pageBg.addEventListener("click", () => {
 
@@ -74,6 +74,7 @@ const inputName = document.querySelector("#input-name")
 
 close.addEventListener("click", () => {
     startModal.style.opacity = "0%"
+    startModal.style.display = "none"
     userName.textContent = `Вітаємо, гість`
 })
 
@@ -86,6 +87,7 @@ submitform.addEventListener("submit", event => {
 
     }
     startModal.style.opacity = "0%"
+    startModal.style.display = "none"
 })
 
 //////////////////// Games ////////////////// :
@@ -195,5 +197,90 @@ guess.addEventListener("submit", event => {
     } else {
         guessAnswer.style.color = "#990000"
         guessAnswer.textContent = `Ви програли, комп’ютер загадав ${random} `
+    }
+})
+
+
+/////////////// Камінь - ножиці - папір ///////////////
+
+const stone = document.querySelector("#stone")
+const scissors = document.querySelector("#scissors")
+const paper = document.querySelector("#paper")
+
+const stoneResult = document.querySelector("#stone-result")
+
+const pcScore = document.querySelector('#pcScore')
+let pcScoreNum = 0
+const userScore = document.querySelector('#userScore')
+let userScoreNum = 0
+
+function stoneRandom() {
+    let stRandom = Math.random() * 10
+    stRandom = Math.floor(stRandom)
+    if (stRandom <= 3) {
+        stRandom = "stone"
+    } else if (stRandom <= 6) {
+        stRandom = "scissors"
+    } else {
+        stRandom = "paper"
+    }
+    return stRandom
+}
+
+stone.addEventListener("click", () => {
+
+    const pcAnswer = stoneRandom()
+
+    if (pcAnswer === 'stone') {
+        stoneResult.textContent = "Нічия"
+    } else if (pcAnswer === 'scissors') {
+        stoneResult.textContent = "Ви виграли раунд!"
+        stoneResult.style.color = "#039900"
+        userScoreNum += 1
+        userScore.textContent = `Ви - ${userScoreNum}`
+    } else {
+        stoneResult.textContent = "Комп’ютер виграв раунд!"
+        stoneResult.style.color = "#990000"
+        pcScoreNum += 1
+        pcScore.textContent = `Комп’ютер - ${pcScoreNum}`
+    }
+})
+
+scissors.addEventListener("click", () => {
+
+    const pcAnswer = stoneRandom()
+
+    if (pcAnswer === 'stone') {
+        stoneResult.textContent = "Комп’ютер виграв раунд!"
+        stoneResult.style.color = "#990000"
+        pcScoreNum += 1
+        pcScore.textContent = `Комп’ютер - ${pcScoreNum}`
+    } else if (pcAnswer === 'scissors') {
+        stoneResult.textContent = "Нічия"
+
+    } else {
+        stoneResult.textContent = "Ви виграли раунд!"
+        stoneResult.style.color = "#039900"
+        userScoreNum += 1
+        userScore.textContent = `Ви - ${userScoreNum}`
+    }
+})
+
+paper.addEventListener("click", () => {
+
+    const pcAnswer = stoneRandom()
+
+    if (pcAnswer === 'stone') {
+        stoneResult.textContent = "Ви виграли раунд!"
+        stoneResult.style.color = "#039900"
+        userScoreNum += 1
+        userScore.textContent = `Ви - ${userScoreNum}`
+    } else if (pcAnswer === 'scissors') {
+        stoneResult.textContent = "Комп’ютер виграв раунд!"
+        stoneResult.style.color = "#990000"
+        pcScoreNum += 1
+        pcScore.textContent = `Комп’ютер - ${pcScoreNum}`
+    } else {
+        stoneResult.textContent = "Нічия"
     }
 })

@@ -67,7 +67,7 @@
     <main>
         <section class="year">
             <h1 class="year_title">Популярні інетрактивні ігри</h1>
-            <div class="year_line"></div>
+            <div class="line"></div>
             <div class="year_content">
                 <h3 class="year_content--title">Перевір в який рік ти народився</h3>
                 <div class="year_content--box">
@@ -81,21 +81,38 @@
                     <p id="year-answer" class="year_content--box--text"></p>
                 </div>
             </div>
-            <div class="year_line"></div>
-            <div class="year_guess">
-                <h3 class="year_guess--title">Вгадай число, яке загадав комп’ютер</h3>
-                <div class="year_guess--content">
-                    <form id="guess" class="year_guess--content--form" action="">
-                        <input id="guess-input" class="year_guess--content--form--input" placeholder="Введіть число" type="number">
-                        <button type="submit" class="year_guess--content--form--btn">
+            <div class="line"></div>
+            <section class="guess">
+                <h3 class="guess--title">Вгадай число, яке загадав комп’ютер</h3>
+                <div class="guess--content">
+                    <form id="guess" class="guess--content--form" action="">
+                        <input id="guess-input" class="guess--content--form--input" placeholder="Введіть число" type="number">
+                        <button type="submit" class="guess--content--form--btn">
                             <img src="./imgs/search.png" alt="">
                         </button>
                     </form>
-                    <p id="guess-answer" class="year_guess--content--text"></p>
+                    <p id="guess-answer" class="guess--content--text"></p>
                 </div>
+            </section>
+            <div class="line"></div>
+        </section>
+        <section class="stone">
+            <h3 class="stone_title">Камінь - ножиці - папір</h3>
+            <div class="stone_box">
+                <img id="stone" src="./imgs/stone.svg" alt="">
+                <img id="scissors" src="./imgs/scissors.svg" alt="">
+                <img id="paper" src="./imgs/paper.svg" alt="">
             </div>
-            <div class="year_line"></div>
+            <p id="stone-result" class="stone_text"></p>
 
+            <button id="result" class="stone_btn">Варіант комп’ютера</button>
+            <p id="pc-result" class="stone_text"></p>
+            <div class="line"></div>
+            <div class="stone_result">
+                <p class="stone_result--text">Рахунок:</p>
+                <p id="pcScore" class="stone_result--text">Комп’ютер - 0</p>
+                <p id="userScore" class="stone_result--text">Ви - 0</p>
+            </div>
         </section>
     </main>
     <script src="./script.js"></script>
