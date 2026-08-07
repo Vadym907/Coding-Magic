@@ -37,8 +37,7 @@
                 <nav class="header_box--container--nav">
                     <div class="header_box--container--nav--content">
                         <a href="" class="header_box--container--nav--link">Інтерактив</a>
-                        <img class="header_box--container--nav--content--img" id="filter-open" src="./imgs/Vector 4.png"
-                            alt="">
+                        <img class="header_box--container--nav--content--img" id="filter-open" src="./imgs/Vector.svg" alt="">
                     </div>
                     <a href="" class="header_box--container--nav--link">Наша команда</a>
                     <a href="" class="header_box--container--nav--link">Контакти</a>
@@ -72,7 +71,7 @@
                 <h3 class="year_content--title">Перевір в який рік ти народився</h3>
                 <div class="year_content--box">
                     <form id="year" class="year_content--box--form" action="">
-                        <input id="year-input" class="year_content--box--form--input"
+                        <input required id="year-input" class="year_content--box--form--input"
                             placeholder="Введіть рік народження" type="number">
                         <button type="submit" class="year_content--box--form--btn">
                             <img src="./imgs/search.png" alt="">
@@ -86,7 +85,7 @@
                 <h3 class="guess--title">Вгадай число, яке загадав комп’ютер</h3>
                 <div class="guess--content">
                     <form id="guess" class="guess--content--form" action="">
-                        <input id="guess-input" class="guess--content--form--input" placeholder="Введіть число" type="number">
+                        <input required id="guess-input" class="guess--content--form--input" placeholder="Введіть число" type="number">
                         <button type="submit" class="guess--content--form--btn">
                             <img src="./imgs/search.png" alt="">
                         </button>
@@ -113,6 +112,22 @@
                 <p id="pcScore" class="stone_result--text">Комп’ютер - 0</p>
                 <p id="userScore" class="stone_result--text">Ви - 0</p>
             </div>
+        </section>
+        <section class="calculate">
+            <h3 class="calculate_title">Калькулятор</h3>
+            <form id="calculate-form" class="calculate_form">
+                <input required id="number-one" class="calculate_form--number" placeholder="Введіть число" type="number">
+                <div class="calculate_form--box">
+                    <div id="plus" class="calculate_form--box--operation"><p>+</p></div>
+                    <div id="multiply" class="calculate_form--box--operation"><p>*</p></div>
+                    <div id="minus" class="calculate_form--box--operation"><p>-</p></div>
+                    <div id="divide" class="calculate_form--box--operation"><p>/</p></div>
+                </div>
+                <input required id="number-two" class="calculate_form--number" placeholder="Введіть число" type="number">
+                <button type="submit" id="equals" class="calculate_form--equals">=</button>
+                <div id="calculate-result" class="calculate_form--result">Результат</div>
+            </form>
+            <div class="line"></div>
         </section>
     </main>
     <script src="./script.js"></script>

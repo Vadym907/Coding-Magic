@@ -14,6 +14,10 @@ const imgSunBox = document.querySelector("#header-bg-div")
 
 const line = document.querySelectorAll(".line")
 
+const main = document.querySelector("main")
+
+const operation = document.querySelectorAll(".calculate_form--box--operation")
+
 pageBg.addEventListener("click", () => {
 
     imgSun.classList.toggle("header_box--content--background--sun")
@@ -21,12 +25,20 @@ pageBg.addEventListener("click", () => {
 
     if (imgSun.classList.contains("header_box--content--background--moon")) {
         document.body.style.backgroundColor = "black"
+        headerFilterOpen.src = "./imgs/vector-white.svg"
+        
         allContent.forEach(item => {
             item.style.backgroundColor = "black"
+            item.style.borderColor = "white"
         })
         alltext.forEach(item => {
             item.style.color = "white"
         })
+        operation.forEach(item => {
+            item.style.backgroundColor = "#fff"
+            item.style.color = "#000000"
+        })
+
         logo.src = "./imgs/coding-magic–white.svg"
         pageBg.style.backgroundColor = "#7A7A7A"
         line.forEach(item => {
@@ -34,13 +46,20 @@ pageBg.addEventListener("click", () => {
         })
     } else {
         document.body.style.backgroundColor = "white"
+        headerFilterOpen.src = "./imgs/vector.svg"
         document.body.style.transition = "300ms ease backgroundColor"
         alltext.forEach(item => {
             item.style.color = "black"
         })
         allContent.forEach(item => {
             item.style.backgroundColor = "white"
+            item.style.borderColor = "black"
         })
+        operation.forEach(item => {
+            item.style.backgroundColor = "black"
+            item.style.color = "#fff"
+        })
+
         logo.src = "./imgs/coding-magic.svg"
         pageBg.style.backgroundColor = "#7A7A7A"
         line.forEach(item => {
@@ -194,7 +213,11 @@ guess.addEventListener("submit", event => {
     if (guessInput.value == random) {
         guessAnswer.style.color = "#039900"
         guessAnswer.textContent = `Вітаю, ви вгадали число! ${random} `
-    } else {
+    } else if (guessInput.value == 0) {
+        guessAnswer.textContent = `У цій грі немає 0!`
+        guessAnswer.style.color = "#990000"
+    } 
+    else {
         guessAnswer.style.color = "#990000"
         guessAnswer.textContent = `Ви програли, комп’ютер загадав ${random} `
     }
@@ -208,6 +231,8 @@ const scissors = document.querySelector("#scissors")
 const paper = document.querySelector("#paper")
 
 const stoneResult = document.querySelector("#stone-result")
+
+const pcResult = document.querySelector("#result")
 
 const pcScore = document.querySelector('#pcScore')
 let pcScoreNum = 0
@@ -233,16 +258,24 @@ stone.addEventListener("click", () => {
 
     if (pcAnswer === 'stone') {
         stoneResult.textContent = "Нічия"
+        if (imgSun.classList.contains("header_box--content--background--moon")) {
+            stoneResult.style.color = "#fff"
+        } else {
+            stoneResult.style.color = "#000"
+        }
+        pcResult.textContent = "Камінь"
     } else if (pcAnswer === 'scissors') {
         stoneResult.textContent = "Ви виграли раунд!"
         stoneResult.style.color = "#039900"
         userScoreNum += 1
+        pcResult.textContent = "Ножниці"
         userScore.textContent = `Ви - ${userScoreNum}`
     } else {
         stoneResult.textContent = "Комп’ютер виграв раунд!"
         stoneResult.style.color = "#990000"
         pcScoreNum += 1
         pcScore.textContent = `Комп’ютер - ${pcScoreNum}`
+        pcResult.textContent = "Бумага"
     }
 })
 
@@ -254,14 +287,22 @@ scissors.addEventListener("click", () => {
         stoneResult.textContent = "Комп’ютер виграв раунд!"
         stoneResult.style.color = "#990000"
         pcScoreNum += 1
+        pcResult.textContent = "Камінь"
         pcScore.textContent = `Комп’ютер - ${pcScoreNum}`
     } else if (pcAnswer === 'scissors') {
         stoneResult.textContent = "Нічия"
+        if (imgSun.classList.contains("header_box--content--background--moon")) {
+            stoneResult.style.color = "#fff"
+        } else {
+            stoneResult.style.color = "#000"
+        }
+        pcResult.textContent = "Ножниці"
 
     } else {
         stoneResult.textContent = "Ви виграли раунд!"
         stoneResult.style.color = "#039900"
         userScoreNum += 1
+        pcResult.textContent = "Бумага"
         userScore.textContent = `Ви - ${userScoreNum}`
     }
 })
@@ -272,6 +313,7 @@ paper.addEventListener("click", () => {
 
     if (pcAnswer === 'stone') {
         stoneResult.textContent = "Ви виграли раунд!"
+        pcResult.textContent = "Камінь"
         stoneResult.style.color = "#039900"
         userScoreNum += 1
         userScore.textContent = `Ви - ${userScoreNum}`
@@ -279,8 +321,75 @@ paper.addEventListener("click", () => {
         stoneResult.textContent = "Комп’ютер виграв раунд!"
         stoneResult.style.color = "#990000"
         pcScoreNum += 1
+        pcResult.textContent = "Ножниці"
         pcScore.textContent = `Комп’ютер - ${pcScoreNum}`
     } else {
+        if (imgSun.classList.contains("header_box--content--background--moon")) {
+            stoneResult.style.color = "#fff"
+        } else {
+            stoneResult.style.color = "#000"
+        }
+        pcResult.textContent = "Бумага"
         stoneResult.textContent = "Нічия"
+    }
+})
+
+
+/////////////////////////// calculate /////////////////////
+
+
+const numberOne = document.querySelector("#number-one")
+const numberTwo = document.querySelector("#number-two")
+
+const plus = document.querySelector("#plus")
+const minus = document.querySelector("#minus")
+const divide = document.querySelector("#divide")
+const multiply = document.querySelector("#multiply")
+
+const equals = document.querySelector("#equals")
+const calculateResult = document.querySelector("#calculate-result")
+
+const calculateForm = document.querySelector("#calculate-form")
+
+let action = ""
+
+plus.addEventListener("click", () => {
+    action = "plus"
+})
+minus.addEventListener("click", () => {
+    action = "minus"
+})
+divide.addEventListener("click", () => {
+    action = "divide"
+})
+multiply.addEventListener("click", () => {
+    action = "multiply"
+})
+
+calculateForm.addEventListener("submit", event => {
+    event.preventDefault()
+    switch (action) {
+        case 'plus':
+            calculateResult.textContent = `Сумма чисел ${numberOne.value} і ${numberTwo.value} = ${Number(numberOne.value) + Number(numberTwo.value) }`
+
+            break;
+
+        case 'minus':
+            calculateResult.textContent = `Різниця чисел ${numberOne.value} і ${numberTwo.value} = ${Number(numberOne.value) - Number(numberTwo.value) }`
+            break;
+
+        case 'multiply':
+            calculateResult.textContent = `Добуток чисел ${numberOne.value} і ${numberTwo.value} = ${Number(numberOne.value) * Number(numberTwo.value) }`
+            break;
+
+        case 'divide':
+            if (numberTwo.value === "0") {
+                calculateResult.textContent = "На 0 не можна ділити!"
+            } else {
+                calculateResult.textContent = `Частка чисел ${numberOne.value} і ${numberTwo.value} = ${Number(numberOne.value) / Number(numberTwo.value) }`
+            }
+            break;
+        default:
+            break;
     }
 })
