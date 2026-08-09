@@ -26,7 +26,7 @@ pageBg.addEventListener("click", () => {
     if (imgSun.classList.contains("header_box--content--background--moon")) {
         document.body.style.backgroundColor = "black"
         headerFilterOpen.src = "./imgs/vector-white.svg"
-        
+
         allContent.forEach(item => {
             item.style.backgroundColor = "black"
             item.style.borderColor = "white"
@@ -35,15 +35,19 @@ pageBg.addEventListener("click", () => {
             item.style.color = "white"
         })
         operation.forEach(item => {
-            item.style.backgroundColor = "#fff"
-            item.style.color = "#000000"
+            item.style.backgroundColor = "white"
+            item.style.color = "black"
         })
+
+        equals.style.backgroundColor = "white"
+        equals.style.color = "black"
 
         logo.src = "./imgs/coding-magic–white.svg"
         pageBg.style.backgroundColor = "#7A7A7A"
         line.forEach(item => {
             item.style.border = "1px solid #fff"
         })
+        calculateResult.style.backgroundColor = "#D7D7D7"
     } else {
         document.body.style.backgroundColor = "white"
         headerFilterOpen.src = "./imgs/vector.svg"
@@ -57,7 +61,7 @@ pageBg.addEventListener("click", () => {
         })
         operation.forEach(item => {
             item.style.backgroundColor = "black"
-            item.style.color = "#fff"
+            item.style.color = "#ffffff"
         })
 
         logo.src = "./imgs/coding-magic.svg"
@@ -65,6 +69,9 @@ pageBg.addEventListener("click", () => {
         line.forEach(item => {
             item.style.border = "1px solid #000"
         })
+        equals.style.backgroundColor = "black"
+        equals.style.color = "white"
+        calculateResult.style.backgroundColor = "#D7D7D7"
     }
 })
 
@@ -216,7 +223,7 @@ guess.addEventListener("submit", event => {
     } else if (guessInput.value == 0) {
         guessAnswer.textContent = `У цій грі немає 0!`
         guessAnswer.style.color = "#990000"
-    } 
+    }
     else {
         guessAnswer.style.color = "#990000"
         guessAnswer.textContent = `Ви програли, комп’ютер загадав ${random} `
@@ -353,40 +360,112 @@ const calculateForm = document.querySelector("#calculate-form")
 
 let action = ""
 
+let color = ""
+
 plus.addEventListener("click", () => {
     action = "plus"
+    if (color === "") {
+        plus.style.transition = "300ms ease background-color"
+        plus.style.backgroundColor = "#505050"
+        color = "plus"
+    } else {
+        plus.style.transition = "300ms ease background-color"
+        plus.style.backgroundColor = "#505050"
+        if (imgSun.classList.contains("header_box--content--background--moon")) {
+            minus.style.backgroundColor = "#ffff"
+            divide.style.backgroundColor = "#fff"
+            multiply.style.backgroundColor = "#fff"
+        } else {
+            minus.style.backgroundColor = "#000000"
+            divide.style.backgroundColor = "#000000"
+            multiply.style.backgroundColor = "#000000"
+        }
+    }
 })
 minus.addEventListener("click", () => {
     action = "minus"
+    if (color === "") {
+        minus.style.transition = "300ms ease background-color"
+        minus.style.backgroundColor = "#505050"
+        color = "minus"
+    } else {
+        minus.style.transition = "300ms ease background-color"
+        minus.style.backgroundColor = "#505050"
+
+        if (imgSun.classList.contains("header_box--content--background--moon")) {
+            plus.style.backgroundColor = "#ffff"
+            divide.style.backgroundColor = "#fff"
+            multiply.style.backgroundColor = "#fff"
+        } else {
+            plus.style.backgroundColor = "#000000"
+            divide.style.backgroundColor = "#000000"
+            multiply.style.backgroundColor = "#000000"
+        }
+        
+    }
 })
 divide.addEventListener("click", () => {
     action = "divide"
+    if (color === "") {
+        divide.style.transition = "300ms ease background-color"
+        divide.style.backgroundColor = "#505050"
+        color = "divide"
+    } else {
+        divide.style.transition = "300ms ease background-color"
+        divide.style.backgroundColor = "#505050"
+        if (imgSun.classList.contains("header_box--content--background--moon")) {
+            plus.style.backgroundColor = "#ffff"
+            minus.style.backgroundColor = "#fff"
+            multiply.style.backgroundColor = "#fff"
+        } else {
+            plus.style.backgroundColor = "#000000"
+            minus.style.backgroundColor = "#000000"
+            multiply.style.backgroundColor = "#000000"
+        }
+    }
 })
 multiply.addEventListener("click", () => {
     action = "multiply"
+    if (color === "") {
+        multiply.style.transition = "300ms ease background-color"
+        multiply.style.backgroundColor = "#505050"
+        color = "multiply"
+    } else {
+        multiply.style.transition = "300ms ease background-color"
+        multiply.style.backgroundColor = "#505050"
+        if (imgSun.classList.contains("header_box--content--background--moon")) {
+            plus.style.backgroundColor = "#ffff"
+            divide.style.backgroundColor = "#fff"
+            minus.style.backgroundColor = "#fff"
+        } else {
+            plus.style.backgroundColor = "#000000"
+            divide.style.backgroundColor = "#000000"
+            minus.style.backgroundColor = "#000000"
+        }
+    }
 })
 
 calculateForm.addEventListener("submit", event => {
     event.preventDefault()
     switch (action) {
         case 'plus':
-            calculateResult.textContent = `Сумма чисел ${numberOne.value} і ${numberTwo.value} = ${Number(numberOne.value) + Number(numberTwo.value) }`
+            calculateResult.textContent = `Сумма чисел ${numberOne.value} і ${numberTwo.value} = ${Number(numberOne.value) + Number(numberTwo.value)}`
 
             break;
 
         case 'minus':
-            calculateResult.textContent = `Різниця чисел ${numberOne.value} і ${numberTwo.value} = ${Number(numberOne.value) - Number(numberTwo.value) }`
+            calculateResult.textContent = `Різниця чисел ${numberOne.value} і ${numberTwo.value} = ${Number(numberOne.value) - Number(numberTwo.value)}`
             break;
 
         case 'multiply':
-            calculateResult.textContent = `Добуток чисел ${numberOne.value} і ${numberTwo.value} = ${Number(numberOne.value) * Number(numberTwo.value) }`
+            calculateResult.textContent = `Добуток чисел ${numberOne.value} і ${numberTwo.value} = ${Number(numberOne.value) * Number(numberTwo.value)}`
             break;
 
         case 'divide':
             if (numberTwo.value === "0") {
                 calculateResult.textContent = "На 0 не можна ділити!"
             } else {
-                calculateResult.textContent = `Частка чисел ${numberOne.value} і ${numberTwo.value} = ${Number(numberOne.value) / Number(numberTwo.value) }`
+                calculateResult.textContent = `Частка чисел ${numberOne.value} і ${numberTwo.value} = ${Number(numberOne.value) / Number(numberTwo.value)}`
             }
             break;
         default:
