@@ -15,8 +15,8 @@
             <img class="modal_box--puzzle" src="./imgs/puzzle.png" alt="">
             <img id="close" class="modal_box--close" src="./imgs/close.png" alt="">
             <div class="modal_box--content">
-                <p class="modal_box--content--text">Привіт!
-                    Ви потрапили на сайт інтерактивних ігор та завдань
+                <p class="modal_box--content--text">Привіт! <br>
+                    Ви потрапили на сайт інтерактивних ігор та завдань <br>
                     Надіємось, що вам сподобається і ви отримаєте позитивні емоції!
                     Бажаємо Вам гарно провести час!</p>
                 <form id="start-modal-submit" class="modal_box--content--form" action="">
@@ -128,6 +128,22 @@
                 <div id="calculate-result" class="calculate_form--result">Результат</div>
             </form>
             <div class="line"></div>
+        </section>
+        <section class="time">
+            <h3 class="time_title">Калькулятор часу</h3>
+            <div class="time_content">
+                <form id="time-calculate" class="time_content--form" action="">
+                    <input required id="time-calculate-input" placeholder="Введіть число" class="time_content--form--input" type="number">
+                    <button type="submit" class="time_content--form--btn"><img src="./imgs/search.png" alt=""></button>
+                </form>
+                    <div class="time_content--line"></div>
+                    <p id="time-calculate-text" class="time_content--text">3 дн. 15:45:01</p>
+            </div>
+            <div class="line"></div>
+        </section>
+        <section class="dino">
+            <h3 class="dino_title"></h3>
+            <div class="dino_content"></div>
         </section>
     </main>
     <script src="./script.js"></script>

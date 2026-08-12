@@ -2,7 +2,7 @@
 
 const logo = document.querySelector("#logo")
 
-const allContent = document.querySelectorAll("section,div")
+const allContent = document.querySelectorAll("section,div, header,footer")
 
 const alltext = document.querySelectorAll("p, h1,h2,h3,h4, a, li")
 
@@ -24,7 +24,7 @@ pageBg.addEventListener("click", () => {
     imgSun.classList.toggle("header_box--content--background--moon")
 
     if (imgSun.classList.contains("header_box--content--background--moon")) {
-        document.body.style.backgroundColor = "black"
+        document.body.style.backgroundColor = "#696969"
         headerFilterOpen.src = "./imgs/vector-white.svg"
 
         allContent.forEach(item => {
@@ -470,5 +470,25 @@ calculateForm.addEventListener("submit", event => {
             break;
         default:
             break;
+    }
+})
+
+
+//////////////////////////// time- calculate ////////////////////////////
+
+const timeCalculate = document.querySelector("#time-calculate")
+const timeCalculateInput = document.querySelector("#time-calculate-input")
+const timeCalculateText = document.querySelector("#time-calculate-text")
+
+timeCalculate.addEventListener("submit", event => {
+    event.preventDefault()
+    const time = Number(timeCalculateInput.value)
+
+    if (time < 60) {
+        timeCalculateText.textContent = `${time} хв.`
+    } else if (time < 1440) {
+        timeCalculateText.textContent = `${Math.floor(time / 60)} год. ${Math.floor(time % 60) } хв.`
+    } else {
+        timeCalculateText.textContent = `${Math.floor(time / 1440)} дн. ${Math.floor(time % 1440 / 60)} год. ${Math.floor(time % 60 ) } хв.`
     }
 })
