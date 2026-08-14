@@ -401,7 +401,7 @@ minus.addEventListener("click", () => {
             divide.style.backgroundColor = "#000000"
             multiply.style.backgroundColor = "#000000"
         }
-        
+
     }
 })
 divide.addEventListener("click", () => {
@@ -487,8 +487,28 @@ timeCalculate.addEventListener("submit", event => {
     if (time < 60) {
         timeCalculateText.textContent = `${time} хв.`
     } else if (time < 1440) {
-        timeCalculateText.textContent = `${Math.floor(time / 60)} год. ${Math.floor(time % 60) } хв.`
+        timeCalculateText.textContent = `${Math.floor(time / 60)} год. ${Math.floor(time % 60)} хв.`
     } else {
-        timeCalculateText.textContent = `${Math.floor(time / 1440)} дн. ${Math.floor(time % 1440 / 60)} год. ${Math.floor(time % 60 ) } хв.`
+        timeCalculateText.textContent = `${Math.floor(time / 1440)} дн. ${Math.floor(time % 1440 / 60)} год. ${Math.floor(time % 60)} хв.`
     }
 })
+
+
+// ///////////////////////// dino /////////////////////
+
+// const dinoGame = document.querySelector("#dino-game")
+// const dino = document.querySelector("#dino")
+// const score = document.querySelector("#dino-score")
+// const record = document.querySelector("#record")
+
+// document.body.addEventListener("keypress", (event) => {
+//     let dinoScore = 0
+//     if (event.code === "space") {
+//         setInterval(() => {
+//         dinoScore += 1
+//         record.textContent = dinoScore
+//         }, 200);
+//         setInterval()
+//     }
+// })
+

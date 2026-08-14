@@ -37,7 +37,8 @@
                 <nav class="header_box--container--nav">
                     <div class="header_box--container--nav--content">
                         <a href="" class="header_box--container--nav--link">Інтерактив</a>
-                        <img class="header_box--container--nav--content--img" id="filter-open" src="./imgs/Vector.svg" alt="">
+                        <img class="header_box--container--nav--content--img" id="filter-open" src="./imgs/Vector.svg"
+                            alt="">
                     </div>
                     <a href="" class="header_box--container--nav--link">Наша команда</a>
                     <a href="" class="header_box--container--nav--link">Контакти</a>
@@ -85,7 +86,8 @@
                 <h3 class="guess--title">Вгадай число, яке загадав комп’ютер</h3>
                 <div class="guess--content">
                     <form id="guess" class="guess--content--form" action="">
-                        <input required id="guess-input" class="guess--content--form--input" placeholder="Введіть число" type="number">
+                        <input required id="guess-input" class="guess--content--form--input" placeholder="Введіть число"
+                            type="number">
                         <button type="submit" class="guess--content--form--btn">
                             <img src="./imgs/search.png" alt="">
                         </button>
@@ -116,14 +118,16 @@
         <section class="calculate">
             <h3 class="calculate_title">Калькулятор</h3>
             <form id="calculate-form" class="calculate_form">
-                <input required id="number-one" class="calculate_form--number" placeholder="Введіть число" type="number">
+                <input required id="number-one" class="calculate_form--number" placeholder="Введіть число"
+                    type="number">
                 <div class="calculate_form--box">
                     <div id="plus" class="calculate_form--box--operation">+</div>
                     <div id="multiply" class="calculate_form--box--operation">*</div>
                     <div id="minus" class="calculate_form--box--operation">-</div>
                     <div id="divide" class="calculate_form--box--operation">/</div>
                 </div>
-                <input required id="number-two" class="calculate_form--number" placeholder="Введіть число" type="number">
+                <input required id="number-two" class="calculate_form--number" placeholder="Введіть число"
+                    type="number">
                 <button type="submit" id="equals" class="calculate_form--equals">=</button>
                 <div id="calculate-result" class="calculate_form--result">Результат</div>
             </form>
@@ -133,17 +137,22 @@
             <h3 class="time_title">Калькулятор часу</h3>
             <div class="time_content">
                 <form id="time-calculate" class="time_content--form" action="">
-                    <input required id="time-calculate-input" placeholder="Введіть число" class="time_content--form--input" type="number">
+                    <input required id="time-calculate-input" placeholder="Введіть число"
+                        class="time_content--form--input" type="number">
                     <button type="submit" class="time_content--form--btn"><img src="./imgs/search.png" alt=""></button>
                 </form>
-                    <div class="time_content--line"></div>
-                    <p id="time-calculate-text" class="time_content--text">3 дн. 15:45:01</p>
+                <div class="time_content--line"></div>
+                <p id="time-calculate-text" class="time_content--text">3 дн. 15:45:01</p>
             </div>
             <div class="line"></div>
         </section>
         <section class="dino">
-            <h3 class="dino_title"></h3>
-            <div class="dino_content"></div>
+            <h3 class="dino_title">Google динозавр</h3>
+            <div id="dino-game" class="dino_content">
+                <iframe src="https://chromedino.com/embed/" frameborder="0" scrolling="no" width="100%" height="100%"
+                    loading="lazy"></iframe>
+            </div>
+            <div class="line"></div>
         </section>
     </main>
     <script src="./script.js"></script>
