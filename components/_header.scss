@@ -67,6 +67,7 @@
                 flex-direction: column;
                 padding-bottom: 47px;
                 align-items: center;
+                z-index: 10;
 
                 &--label {
                     font-family: Inter;
@@ -126,6 +127,7 @@
 .header {
     max-width: 1090px;
     width: 100%;
+    background-color: #fff;
     margin: 0 auto;
     padding-top: 21px;
     padding-bottom: 56px;

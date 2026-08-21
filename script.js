@@ -2,7 +2,7 @@
 
 const logo = document.querySelector("#logo")
 
-const allContent = document.querySelectorAll("section,div, header,footer")
+const allContent = document.querySelectorAll("section, header,footer")
 
 const alltext = document.querySelectorAll("p, h1,h2,h3,h4, a, li")
 
@@ -25,6 +25,7 @@ pageBg.addEventListener("click", () => {
 
     if (imgSun.classList.contains("header_box--content--background--moon")) {
         document.body.style.backgroundColor = "#696969"
+        main.style.backgroundColor = "#696969"
         headerFilterOpen.src = "./imgs/vector-white.svg"
 
         allContent.forEach(item => {
@@ -50,6 +51,7 @@ pageBg.addEventListener("click", () => {
         calculateResult.style.backgroundColor = "#D7D7D7"
     } else {
         document.body.style.backgroundColor = "white"
+        main.style.backgroundColor = "#EEEEEE"
         headerFilterOpen.src = "./imgs/vector.svg"
         document.body.style.transition = "300ms ease backgroundColor"
         alltext.forEach(item => {
@@ -493,22 +495,308 @@ timeCalculate.addEventListener("submit", event => {
     }
 })
 
+/////////////  football    ///////////////////
 
-// ///////////////////////// dino /////////////////////
+const football = document.querySelector("#football")
 
-// const dinoGame = document.querySelector("#dino-game")
-// const dino = document.querySelector("#dino")
-// const score = document.querySelector("#dino-score")
-// const record = document.querySelector("#record")
+const ball = document.querySelector("#ball")
 
-// document.body.addEventListener("keypress", (event) => {
-//     let dinoScore = 0
-//     if (event.code === "space") {
-//         setInterval(() => {
-//         dinoScore += 1
-//         record.textContent = dinoScore
-//         }, 200);
-//         setInterval()
-//     }
-// })
+football.addEventListener("mousedown", event => {
+    const areaGame = football.getBoundingClientRect()
 
+    ball.style.left = `${event.clientX - areaGame.left - 20}px`
+    ball.style.top = `${event.clientY - areaGame.top - 20}px`
+})
+
+////////////  biggest  ///////////////
+
+const biggestNum1 = document.querySelector("#biggestNum1")
+const biggestNum2 = document.querySelector("#biggestNum2")
+const biggestNum3 = document.querySelector("#biggestNum3")
+
+const biggestResult = document.querySelector("#biggest-result")
+
+function findMax() {
+    if (biggestNum1.value !== "" && biggestNum2.value !== "" && biggestNum3.value !== "") {
+        let max = Math.max(Number(biggestNum1.value), Number(biggestNum2.value), Number(biggestNum3.value))
+
+        biggestResult.textContent = `Найбільше число, яке ви ввели - ${max}`;
+        biggestResult.style.marginTop = "36px"
+    }
+}
+
+biggestNum1.addEventListener("input", findMax);
+biggestNum2.addEventListener("input", findMax);
+biggestNum3.addEventListener("input", findMax);
+
+
+/////////////////////////////////////////////// slider /////////////////////////////
+
+const slider = document.querySelector("#slider")
+
+const sliderCards = document.querySelectorAll(".team_content--box")
+
+let CardWidth
+
+const visible = 1
+const sliderDots = document.getElementById("dots")
+const total = sliderCards.length
+let current = 0
+
+const arrowLeft = document.querySelector("#arrow-left")
+const arrowright = document.querySelector("#arrow-right")
+
+arrowLeft.addEventListener("click", () => {
+    current--
+
+    if (current < 0) {
+        current = total - 1
+    }
+    moveProducts("left")
+})
+
+arrowright.addEventListener("click", () => {
+    current++
+
+    if (current >= total) {
+        current = 0
+    }
+
+    moveProducts()
+})
+
+
+function updateProductsWidth() {
+    CardWidth = sliderCards[0].offsetWidth
+}
+
+function moveProducts() {
+    slider.style.transition = "transform 1000ms ease";
+    slider.style.transform = `translateX(-${current * CardWidth}px)`;
+
+    document.querySelectorAll(".dot").forEach(dot =>
+        dot.classList.remove("active")
+    );
+
+    sliderDots.children[current].classList.add("active");
+}
+
+for (let i = 0; i < total; i++) {
+    const dot = document.createElement("span")
+    dot.classList.add("dot")
+    if (i === 0) dot.classList.add("active")
+
+    dot.addEventListener("click", () => {
+        current = i
+        moveProducts()
+    });
+
+    sliderDots.appendChild(dot)
+}
+updateProductsWidth()
+
+
+
+////////////////////// scientists /////////////
+
+const scientists = [
+    {
+        name: "Albert",
+        surname: "Einstein",
+        born: 1879,
+        dead: 1955,
+        id: 1
+    },
+    {
+        name: "Isaac",
+        surname: "Newton",
+        born: 1643,
+        dead: 1727,
+        id: 2
+    },
+    {
+        name: "Galileo",
+        surname: "Galilei",
+        born: 1564,
+        dead: 1642,
+        id: 3
+    },
+    {
+        name: "Marie",
+        surname: "Curie",
+        born: 1867,
+        dead: 1934,
+        id: 4
+    },
+    {
+        name: "Johannes",
+        surname: "Kepler",
+        born: 1571,
+        dead: 1630,
+        id: 5
+    },
+    {
+        name: "Nicolaus",
+        surname: "Copernicus",
+        born: 1473,
+        dead: 1543,
+        id: 6
+    },
+    {
+        name: "Max",
+        surname: "Planck",
+        born: 1858,
+        dead: 1947,
+        id: 7
+    },
+    {
+        name: "Katherine",
+        surname: "Blodgett",
+        born: 1898,
+        dead: 1979,
+        id: 8
+    },
+    {
+        name: "Ada",
+        surname: "Lovelace",
+        born: 1815,
+        dead: 1852,
+        id: 9
+    },
+    {
+        name: "Sarah E.",
+        surname: "Goode",
+        born: 1855,
+        dead: 1905,
+        id: 10
+    },
+    {
+        name: "Lise",
+        surname: "Meitner",
+        born: 1878,
+        dead: 1968,
+        id: 11
+    },
+    {
+        name: "Hanna",
+        surname: "Hammarström",
+        born: 1829,
+        dead: 1909,
+        id: 12
+    }
+]
+
+scientistCreate(scientists)
+
+function scientistCreate(array) {
+
+    const scientistsCard = document.querySelector(".scientists_content")
+
+    scientistsCard.innerHTML = ""
+
+    array.forEach(scientist => {
+        const scientistsCardChild = document.createElement("div")
+        scientistsCardChild.classList.add("scientists_content--card")
+
+        const scientistsCardChildText = document.createElement("p")
+        scientistsCardChildText.classList.add("scientists_content--card--text")
+
+        const scientistsCardChildyear = document.createElement("p")
+        scientistsCardChildyear.classList.add("scientists_content--card--text")
+
+        scientistsCardChildText.textContent = `${scientist.name} ${scientist.surname}`
+        scientistsCardChildyear.textContent = `${scientist.born}-${scientist.dead}`
+
+        scientistsCard.append(scientistsCardChild)
+        scientistsCardChild.prepend(scientistsCardChildText)
+        scientistsCardChild.append(scientistsCardChildyear)
+    })
+}
+
+
+const allscientist = document.querySelectorAll(".scientists_content--card")
+
+const scientistsFilter = document.querySelector("#scientists-filter")
+
+scientistsFilter.addEventListener("click", event => {
+    switch (event.target.dataset.filter) {
+
+        case "19st":
+            scientistCreate(
+                scientists.filter(scientist =>
+                    scientist.born >= 1801 &&
+                    scientist.born <= 1900
+                )
+            );
+            break;
+
+        case "abc":
+            scientistCreate(
+                [...scientists].sort((a, b) =>
+                    a.name.localeCompare(b.name)
+                )
+            );
+            break;
+
+        case "life":
+            scientistCreate(
+                [...scientists].sort((a, b) =>
+                    (a.dead - a.born) - (b.dead - b.born)
+                )
+            );
+            break;
+
+        case "bornLater":
+            scientistCreate([
+                scientists.reduce((latest, scientist) =>
+                    scientist.born > latest.born ? scientist : latest
+                )
+            ]);
+            break;
+
+        case "AlbertBorn":
+            scientistCreate(
+                scientists.filter(scientist =>
+                    scientist.name === "Albert"
+                )
+            );
+            break;
+
+        case "surnameC":
+            scientistCreate(
+                scientists.filter(scientist =>
+                    scientist.surname.startsWith("C")
+                )
+            );
+            break;
+
+        case "nameA":
+            scientistCreate(
+                scientists.filter(scientist =>
+                    !scientist.name.startsWith("A")
+                )
+            );
+            break;
+
+        case "lifeS":
+            const sorted = [...scientists].sort(
+                (a, b) =>
+                    (a.dead - a.born) - (b.dead - b.born)
+            );
+
+            scientistCreate([
+                sorted[0],
+                sorted[sorted.length - 1]
+            ]);
+            break;
+
+        case "firstL":
+            scientistCreate(
+                scientists.filter(scientist =>
+                    scientist.name[0].toLowerCase() ===
+                    scientist.surname[0].toLowerCase()
+                )
+            );
+            break;
+    }
+});

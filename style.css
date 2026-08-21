@@ -68,6 +68,7 @@
   flex-direction: column;
   padding-bottom: 47px;
   align-items: center;
+  z-index: 10;
 }
 .modal_box--content--form--label {
   font-family: Inter;
@@ -120,6 +121,7 @@
 .header {
   max-width: 1090px;
   width: 100%;
+  background-color: #fff;
   margin: 0 auto;
   padding-top: 21px;
   padding-bottom: 56px;
@@ -273,6 +275,7 @@
 main {
   background-image: url(./imgs/big-bg.png);
   background-repeat: no-repeat;
+  background-color: #EEEEEE;
   background-size: cover;
 }
 
@@ -718,4 +721,284 @@ input[type=number]::-webkit-inner-spin-button {
   width: 100%;
   height: 100%;
   z-index: 999;
+}
+
+.football {
+  max-width: 1090px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  align-items: center;
+  padding: 36px 0;
+}
+.football_title {
+  padding-bottom: 36px;
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.football_game {
+  width: 720px;
+  height: 220px;
+  background: #5ABB58;
+  border: 2px solid #000000;
+  border-radius: 37px;
+  margin-bottom: 36px;
+  overflow: hidden;
+  position: relative;
+}
+.football_game--img {
+  position: absolute;
+  top: 85px;
+  left: 92px;
+  transition: 500ms ease top;
+  transition: 500ms ease left;
+}
+
+.biggest {
+  max-width: 1090px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  align-items: center;
+  padding-bottom: 36px;
+}
+.biggest_title {
+  margin-bottom: 36px;
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.biggest_form {
+  max-width: 481px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.biggest_form--input {
+  background: #D7D7D7;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  color: #7E7E7E;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  max-width: 135px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.biggest_text {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  margin-bottom: 36px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.team {
+  max-width: 1090px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  align-items: center;
+  position: relative;
+  padding-bottom: 36px;
+}
+.team_leftArrow {
+  position: absolute;
+  z-index: 30;
+  left: 92px;
+  top: 20%;
+  cursor: pointer;
+}
+.team_rightArrow {
+  position: absolute;
+  z-index: 30;
+  right: 92px;
+  top: 20%;
+  cursor: pointer;
+}
+.team_title {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  margin-bottom: 36px;
+}
+.team_content {
+  overflow: hidden;
+  padding-bottom: 36px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+.team_content--window {
+  overflow: hidden;
+  width: 100%;
+}
+.team_content--slider {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+.team_content--box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 0 0 100%;
+  max-width: none;
+  width: auto;
+}
+.team_content--box--student {
+  width: 150px;
+  height: 150px;
+  background: #D9D9D9;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.team_content--box--title {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.team_content--box--text {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding-bottom: 24px;
+}
+.team_content--points {
+  max-width: 174px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.team_content--points .dot {
+  background: #D9D9D9;
+  width: 18px;
+  height: 3px;
+  border-radius: 3px;
+  transition: 0.3s;
+  display: inline-block;
+  cursor: pointer;
+}
+.team_content--points .dot.active {
+  background: #797979;
+  width: 30px;
+  height: 3px;
+  border-radius: 3px;
+}
+
+.scientists {
+  max-width: 1090px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  align-items: center;
+  padding-bottom: 36px;
+}
+.scientists_title {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  margin-bottom: 36px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+.scientists_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 59px;
+  row-gap: 36px;
+  max-width: 577px;
+}
+.scientists_content--card {
+  background: #D9D9D9;
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 36px;
+  justify-content: center;
+}
+.scientists_content--card--text {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 8px;
+  line-height: 170%;
+  letter-spacing: 0%;
+  text-align: center;
+}
+.scientists_filter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+}
+.scientists_filter--box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.scientists_filter--left {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+  justify-items: end;
+}
+.scientists_filter--right {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+  justify-items: start;
+}
+.scientists_filter--btn {
+  font-family: Montserrat Alternates;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 12px;
+  background: #000000;
+  box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.2509803922);
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  color: #fff;
+  line-height: 100%;
+  letter-spacing: 0%;
+  cursor: pointer;
+  text-align: start;
 }/*# sourceMappingURL=style.css.map */
